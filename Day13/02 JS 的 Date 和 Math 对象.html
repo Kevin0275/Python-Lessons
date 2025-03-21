@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    console.log(Math.random())    // 取 0 - 1 的随机浮点数
+    console.log(Math.round(Math.random() * 100))    // 取 0 - 100 的随机整数
+    console.log(Math.ceil(Math.random() * 100))
+    console.log(Math.floor(Math.random() * 100))
+
+    /*
+    Math.round 是取最近的整数
+    Math.ceil 是向下取整
+    Math.floor 是向上取整
+     */
+
+    // 暂停加密的方法（一般在控制台里面使用）
+    // 原加密方法：
+
+    /*
+    function secrete(data){
+        let date = new Date()
+        return 100*(Math.random())+data + date.getTime()
+    }
+
+    console.log(secrete('PWD=123456'))
+
+     */
+    /*
+    75.35511857849633PWD=1234561737885014088
+    31.794386348613756PWD=1234561737885030165
+     */
+
+    // 很显然，我们并不能得到我们想要的数据
+
+    // 这种情况下，我们考虑在控制台直接暂停，当然这里我就直接操作了
+
+    // 逻辑：重新改写函数，固定变量
+
+    Date.prototype.getTime = function () {
+        return 1737885241120
+    }
+    Math.random = function () {
+        return 0.5
+    }
+    function secrete(data){
+        let date = new Date()
+        return 100*(Math.random())+data + date.getTime()
+    }
+    console.log(secrete('PWD=123456'))
+
+    /*
+    50PWD=1234561737885241120
+    50PWD=1234561737885241120
+
+    完全一样
+     */
+
+</script>
+
+
+</body>
+</html>

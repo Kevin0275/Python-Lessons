@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let p1 = {
+        name: 'p',
+        age: 18,
+        married: true
+    }
+
+    // .属性操作 和 []的key操作
+    console.log(p1.name);
+    console.log(p1['name']);
+
+    // object 对象可以装函数
+    // this 在这个里面可以用来指代这个对象本身，也就是在自己的函数体里面调用自己
+    let p2 = {
+        name: 'p',
+        age: 18,
+        ability: function () {
+            console.log('This is a latter!', this.name)
+        }
+    }
+    p2.ability()
+
+    // 如果有一个函数对于很多object都通用，所以我们需要（在ES6版本之前）利用function来声明
+    // 一般如果说我们希望声明这是一个类，首字母大写，如果首字母小写一般是一个普通函数
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.ability = function () {
+            console.log('This is a latter!', this.name)
+        }
+    }
+
+    let p3 = new Person('p', 18);
+    console.log(p3.name);
+    console.log(p3.age)
+    p3.ability();
+
+
+    // JS 支持 json 序列化和反序列化
+    /*
+    序列化: JSON.stringify()
+    反序列化：JSON.parse()
+     */
+    let account = {
+        name: 'Kevin',
+        password: '123456'
+    }
+    let account_json = JSON.stringify(account);
+    console.log(account_json);
+
+    let json = '{"code": 123, "status": "\u6210\u529f\uff01"}'
+    let JS_1 = JSON.parse(json);
+    console.log(JS_1);
+</script>
+
+</body>
+</html>

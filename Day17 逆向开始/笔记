@@ -1,0 +1,31 @@
+1. 排除干扰，选择合适的触发事件
+2. json data，注意用json传参数，不用data
+3. 有的时候，返回的数据就是加密格式，我们不可能自己才出来用的是什么，所以：
+    请求和响应入口定位方法：
+
+    关键字搜索：
+        方法关键字: encrypt, decrypt
+        key关键字:
+        headers关键字
+        拦截器关键字
+        路径关键字
+
+    请求堆栈
+
+    hook钩子
+
+4. 断点
+    普通断点
+    条件断点
+    日志断点
+    XHR断点
+
+
+Python逆向
+JS逆向
+
+对于win系统，可能会因为编码格式报错：
+import subprocess
+from functools import partial
+subprocess.Popen = partial(subprocess.Popen, encoding="utf-8")
+import execjs

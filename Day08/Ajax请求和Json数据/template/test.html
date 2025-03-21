@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src = 'static/jquery.js'></script>
+</head>
+<body>
+
+<h1>
+  Hello World!
+</h1>
+<h2 id="Books">
+  This is the books (click):
+</h2>
+<div id="book"></div>
+
+<h2 id="json_books">
+    This is for json_dic (click):
+</h2>
+<div id="json"></div>
+
+<script>
+    let ele = document.getElementById('Books');
+    ele.onclick = function () {
+        $.ajax({
+            url : '/ajax',
+            success: function (data) {
+                console.log(data);
+                target_1 = document.getElementById('book');
+                target_1.innerHTML = data;
+      }
+    })
+  }
+</script>
+
+<script>
+    let ele_1 = document.getElementById('json_books');
+    ele_1.onclick = function () {
+        $.ajax({
+            url : '/json',
+            success: function (data) {
+                console.log(data);
+                target_2 = document.getElementById('json');
+                target_2.innerHTML = data;
+            }
+        })
+    }
+</script>
+
+</body>
+</html>

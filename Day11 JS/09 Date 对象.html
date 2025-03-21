@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+      // 一般来说，我们的加密是有两个必要的考虑条件，第一个是时间，第二个是随机数，这两个经常被用在加密中
+      let d = new Date('2025-01-26');
+      // console.log(d.getFullYear());   // 2025
+      // console.log(d.getMonth());    // 0  月份是从 0 开始计算的
+      // console.log(d.getDate());   // 26
+      // console.log(d.getDay());    // 0  星期也是从 0 开始计算的
+
+      // 上述方法并不常用
+      // 比较常用获取当前时间戳：从 1970.1.1 0：0：0 开始计算，到现在的毫秒数（JS）
+      // Python用的是秒数
+
+      let now = new Date();
+      console.log(now.getTime());   // 1737869555739
+
+
+      // 随机数：Math对象：这是一个对象！而不是一个类！
+      console.log(Math.random())  // 0-1 的随机浮点数
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

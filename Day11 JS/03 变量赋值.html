@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+        // 声明变量
+        // 注意：变量不可以重复声明
+        var x;  // 这里的波浪线是建议我们使用let赋值而不是var
+
+        // 变量赋值
+        x = 10;
+        x = 'hello';    // 重新赋值
+
+        // 常用：声明并且赋值：
+        var a = 'hello';
+
+        // let是在var之后引入的声明变量的方法，会解决一些bug，所以现在推荐let赋值
+        let b = 'hello';
+
+        // const是常量赋值，必须在声明变量的时候进行赋值，之后不能修改
+        const c = 'hello';  // c 不可以再进行修改
+
+        // 可以在一个变量赋值语句中声明并赋值多个变量
+        let A,B,C=3,D,E=5;  // 请注意：这里是声明了ABD三个变量，声明并赋值了CE两个变量
+
+        // 解构赋值
+        let p = {'name': 'Alice', 'age': 20};
+        // 这里就是把这个对象赋值给了p
+        console.log(p, typeof p);   // 'object'
+
+        let {name, age} = {'name': 'Alice', 'age': 20};
+        console.log(name, age);     // Alice 20
+
+        // 数据类型：
+        /*
+        1. String,字符串，'xxx'
+        2. Number, 整形和浮点型，12，2.3
+        3. Boolean, 布尔值，true and false（小写的）
+        4. 空值，null，type会是object
+        5. undefined，未被定义，let x; console.log(x)，type也是undefined
+        6. Symbol，符号，表示唯一，不可变，起标识对象属性作用的值
+
+        零值：每一个数据类型下，有且只有一个值，他的bool类型为false，这个值就是零值
+         */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

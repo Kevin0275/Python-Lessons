@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        // function f(){
+        //     // 函数体
+        //
+        //     // 功能
+        //     return 0 // 返回值
+        // }
+
+        /* 很有趣的是：对于Python来说，先调用一个没有定义的函数是没有意义的
+        Python：
+        func()
+        def func():
+            return 0
+
+        会报错：func is not defined
+
+        但是，由于 JS 是预加载的语言，所以对于 JS 语言来说，并不会有这种问题的出现
+        它会在真正执行程序之前，先将所有变量以及定义的函数加载好，这也就是为什么一个变量只能定义一次
+
+         */
+
+        // JS 函数参数：很高的自由度和容错率
+
+        function add1(x, y) {
+            return x + y;
+        }
+
+        console.log(add1(1, 2))
+
+        // result：3
+
+        function add2(x, y, z) {
+            console.log('z:::', z)
+            return x + y;
+        }
+
+        console.log(add2(1, 2))
+
+        // result：z::: undefined & 3
+
+        function add3(x) {
+            return x * 2;
+        }
+
+        console.log(add1(1, 2))
+
+        // result：2
+
+        /*
+        也就是说，对于多余的实参，JS 会丢弃，对于多余的形参，JS 会保持 undefined
+         */
+
+        // 如果我们希望用一个变量来承载所有的参数值，在python里面我们经常使用的是 *
+        function test1(x) {
+            console.log(arguments)      // JS 在每个函数里面内置了一个变量叫 argument，用来承载所有的参数
+            return x * 2;
+        }
+
+        test1(1, 2, 3, 4, 5, 6);    // Arguments(6) [1, 2, 3, 4, 5, 6, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+
+        // 对于多个值的返回，python是可以做到的，它会自动帮你处理成一个元组
+        // 但是 JS 只会返回最后一个
+        function test2(x) {
+            return 100, 200, 300;
+        }
+
+        console.log(test2());   // 300
+
+        // 这是因为 逗号运算符，JS 的确全部加载了所有变量，但是由于逗号的存在，它只返回最后一个
+        function test3(x) {
+            return [100, 200, 300];
+        }
+
+        console.log(test3());
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

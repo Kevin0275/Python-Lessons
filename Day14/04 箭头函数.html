@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        // 声明一个函数，作用是返回传入参数的平方值
+        function square1(x) {
+            return x * x;
+        }
+
+        // 在 ES6 版本中，引入了箭头函数来简化函数的声明方法：
+        // 格式： var 函数名 = 参数 => 表达式
+        var square2 = x => x * x;
+
+        // 空参数：
+        var declare = () => 'Welcome!';
+
+        // 多参数
+        var add = (x, y) => x + y;
+
+        // 多条语句
+        var add1 = (x, y) => {
+            x++;
+            return x + y;
+        }
+
+        // 如果返回值是一个对象(object)并且你使用的是单行语句，由于 {} 在 JS 里面被解释为代码块，我们在外层加上 ()
+        var test = (x) => ({id: 'me', pwd: x})
+
+        // map 函数：针对于数组
+        var array = [1, 2, 4, 5]
+        // 要求：让所有的数平方，然后产出一个新的数组
+
+        // 当然，for of 可以做
+        array1 = []
+        for (const number of array) {
+            array1.push(number * number)
+        }
+        console.log(array1)
+        // 但是有一个更简洁的方式：
+
+        var array2 = array.map(function (item) {
+            return item * item
+        })
+        console.log(array2)
+        // map 里面要传一个函数，默认取每一个数组里面的值，依次执行参数，然后进行函数体并且构建一个新的数组
+        // map 方法的主要作用：对数组元素进行统一改变
+
+        // 如果我们希望能对数组里的所有元素进行一个筛选，比如我只要k开头的名字
+        var names = ['kevin', 'kelly', 'wong', 'li']
+        // 用到的方法是：filter 方法：返回一个bool值，如果是true就留下
+        var names2 = names.filter(function (name) {
+            return name.startsWith('k')
+        })
+        console.log(names2)
+
+
+        // 综合：
+        array3 = array.map(item => item ** 2);
+        console.log(array3);
+
+        names3 = names.filter(name => name.startsWith('k'));
+        console.log(names3);
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

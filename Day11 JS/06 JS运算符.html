@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+        // 自加操作
+        var a = 10;
+        x = x + 1;
+        x += 1; // x = x + 1
+
+        // JS 区别于 Python 的操作
+        x++;   // x = x + 1
+        ++x;   // x = x + 1
+
+        // 重点：这里的难点在于两个表达式的返回值，x计算之后的结果相同
+        let c = x++;   // 这里讲究就近赋值，x在等式中离c近，所以先用原来的x赋值给c，然后对x做++操作
+        let d = ++x;   // 这里同上，因为x离d比较远，所以先对x做++操作，然后把结果x赋值给d
+
+        // 赋值语句：
+        /*
+        = 赋值
+        += 加法赋值
+        -= 减法赋值
+        *= 乘法赋值
+        /= 除法赋值
+         */
+
+        // 比较这方面，JS和python差不多，不过由于隐式转换，2 == '2' 会被判断为真，所以我们需要选用全等于
+        console.log(2 === '2');     // false，全等
+        console.log(2 !== '3');     // 不全等于
+
+        // 逻辑转换
+        console.log(2 === '2' && 3 === '3');        // && 是 and
+        console.log(2 === '2'
+        !!3 === '3'
+        )
+        ;        // || 是 or
+        // ! 是 not 的意思
+
+        // 条件，三元运算符
+
+        let age = 18;
+        let status;
+        if (age >= 18) {
+            status = '成年人'
+        } else {
+            status = '未成年人'
+        }
+        console.log(status);
+
+        // 与之等价的是：三元运算符
+        let age2 = 19;
+        // let status = age2 >= 18 ?  :         如果后面跟的东西是真，返回 ? 后面的值，如果为假，返回 : 后面的值
+        let status2 = age2 >= 18 ? '成年人' : '未成年人'
+
+        // 逗号运算符：
+        let ae = (1, 2, 3, 4, 5);   // 输出的是 5 ，因为逗号运算会将所有的括号内的东西依次运算，返回最后一个值
+
+
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

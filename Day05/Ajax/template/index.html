@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--我们需要先导入一下jquery文件，其实这个是对于JS语言的一次封装，相当于Python的库
+    因为JS语言写Ajax请求很复杂，我们可以直接导入这个文件来用，也就是我放在template里的jquery.js文件
+    源地址：https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js
+    -->
+    <script src="/static/jquery.js"></script>
+</head>
+<body>
+<h1 id="BooksHead">
+    <!--Books: {{book}}, 这是直接获取到显示信息的方法，调用变量并且显示-->
+    Books:
+</h1>
+<div id="books">
+    <script>
+        let ele = document.getElementById('BooksHead');
+        ele.onclick = function(){
+            $.ajax({
+                url:'/books',
+                success: function(res){
+                    console.log('Books Success', res);
+                    // 这里我们让它在控制台打印
+
+                    // 定位到具体的标签并且在网页中局部加载
+                    let element = document.getElementById('BooksHead');
+                    element.innerHTML = 'Books:::' + res;
+                }
+            })
+        }
+    </script>
+</div>
+</body>
+</html>

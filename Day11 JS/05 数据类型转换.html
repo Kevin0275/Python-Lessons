@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        // 首先，JS没有显式准换，也就是python的 int() str()全都不存在
+
+        let a = 100;
+        let b = '200';
+
+        /*
+        我们知道，python里面可以进行：
+        100 + 200 = 300     科学运算
+        '100' + '200' = '100200'    字符串相加
+
+        但是，100 + '200' 会报错不支持
+         */
+
+        console.log(a + b);     // 不会报错，显示的是100200，也就是a先转成字符串然后再相加
+        console.log(b * 3)      // 不会报错，会显示600
+        // 也就是说，JS会自动的根据语境来判断转型
+
+        // 尽量少用隐式转换，因为代码不清晰
+
+        // 转字符串
+        let p1 = 100;
+        let str_p1 = String(p1);
+
+        // 转数字
+        let p2 = '100';
+        let num_p2 = Number(p2);
+
+        // 转布尔值
+        let p3 = 0;
+        let bool_p3 = Boolean(p3);
+
+        // 手动将数字转换成整型或者浮点型
+        let int_num = parseInt('3');   // 整型
+        let float_num = parseFloat('3.14');       // 浮点型
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

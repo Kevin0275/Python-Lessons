@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 分支语句
+    /*
+    Python if 语句：
+        if 表达式:
+            表达式为真-->语句体
+        else:
+            表达式为假-->语句体
+
+    JS的 if 语句：
+        if (表达式1){
+            表达式1为真-->语句体
+        }else if(表达式2){
+            表达式2为真-->语句体
+        }else{
+            表达式1、2为假-->语句体
+        }
+
+    */
+
+    let age = 18;
+    if (age >= 18) {
+        console.log('Adult!')
+    } else {
+        console.log('Child!')
+    }
+
+    // Switch 分支语句：值判断
+    /*
+
+    switch (condition1) {
+      case value1:
+        // 当 condition1 = value1 时执行
+        break;
+      case value2:
+        // 当 condition1 = value2 时执行
+        break;
+      default:
+        // 当 condition1 全部不符合的时候执行
+    }
+
+    */
+
+    // 小技巧：input
+    let age1 = parseInt(prompt('Enter age'));
+    // parseInt 是转换成整数，prompt 是输入，就是对用户不太友好
+
+
+    let week = 2;
+    switch (week) {
+        case 0:
+            console.log('Sunday')
+            break;
+        case 1:
+            console.log('Monday')
+            break;
+        case 2:
+            console.log('Tuesday')
+            break;
+        case 3:
+            console.log('Wednesday')
+            break;
+        case 4:
+            console.log('Thursday')
+            break;
+        case 5:
+            console.log('Friday')
+            break;
+        case 6:
+            console.log('Saturday')
+            break;
+        default:
+            console.log('False!')
+    }
+
+    // 循环：条件循环  遍历循环
+
+    // while 循环
+
+    let n = 1;
+
+    while (n < 10) {
+        console.log('n:::' + n);
+        n++;  // 步进语句
+    }
+
+    // for 循环
+    for (let m = 1;
+    m < 10;
+    m++
+    )
+    {
+        // console.log('m:::' + m);
+        // 循环逻辑
+        console.log('m:::' + m);
+    }
+
+    // for (initialization; condition; update)
+
+    let array = ['Kevin', 'John', 'Mary', 'Jane', 'Jack'];
+    for (let arrayKey in array) {
+        console.log('arrayKey = ', arrayKey, array[arrayKey])
+    }
+    // 注意：这里的arrayKey在遍历的时候，使用的是索引，也就是我们打印的arrayKey是0，1，2，3，4
+
+    let array2 = [100,200,310,41232,421];
+    for (let number of array2) {
+        console.log('number = ', number)
+    }
+    // 注意：这里用的是取值，而不是索引
+
+    // 小技巧：取所有array的值
+    array.forEach(function (i){
+        console.log('i:::', i.toUpperCase())
+    })
+
+    // 循环的退出循环 break 和跳过一次循环 continue 和 python 相同
+
+</script>
+</body>
+</html>

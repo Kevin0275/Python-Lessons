@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var x = 1;
+
+        // 在 Python 和 JS 中，函数被称为‘一等公民’。
+
+        /*
+        // x 支持变量传递
+        var y = x;
+
+        // x 可以作为函数的参数，可以作为返回值
+        function test(a, b) {
+            return a + b;
+        }
+
+        console.log(test(x, x + 1));
+
+        function test2() {
+            return x;
+        }
+
+        test2();
+
+         */
+
+        // 所谓“一等公民”，指的是函数拥有所有以上的特性
+
+        // 变量传递
+        function a(){
+            console.log('123')
+        }
+        var b = a;
+        b()
+
+        // 函数变量可以作为函数参数，也可以作为函数返回值
+        function test2(x){
+            x()
+        }
+        test2(a);
+
+        function test3(){
+            return a;
+        }
+        let res = test3();
+        console.log(res);
+
+        // 所谓高阶函数，就是将函数作为参数或者返回值进行操作的函数
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

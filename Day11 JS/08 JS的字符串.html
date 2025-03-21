@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+    在python里面，我们在申明字符串的时候就是
+        x = 'Kevin'
+    这种，但是实际上python做了简化，因为 str 是 python 里的一个类，所以应该是 x = str('Kevin')
+
+    在 JS 和 Java 里面，这种语法是 x = new 类(对象)
+    let x = 'Kevin'     // 简写形式保存
+    let x = new String('Kevin')     // 正常展开写法
+    let x = String('Kevin')     // 也能用
+     */
+
+    let s = new String('Kevin');
+    console.log(s.length);      // 这里和 python 不一样，length 在 JS 里面被默认为是容器类数据的属性，不用函数
+
+    // 内置方法
+    s.toUpperCase();    // 转大写
+    s.toLowerCase();    // 转小写
+    s.trim();   // 去除两端空格，等于python里面的 s.strip()
+    s.startsWith('Kevin');
+    s.endsWith('Kevin');
+    console.log(s.slice(1,4));      // 切片
+    console.log(s.slice(1));        // 从 1 取到最后
+    s.replace('Kevin', 'jo');
+    s.indexOf('j');
+    let s_split = s.split('');
+    console.log(s_split);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        // 引入：计数器
+
+        /*
+        var n = 0;
+
+        function counter(n) {
+            let ret = ++n;
+            console.log('次数：', ret)
+            return ret;
+        }
+
+         */
+
+        // console.log(counter(n));    // 1
+        // console.log(counter(n));    // 2
+        // console.log(counter(n));    // 3
+        // console.log(counter(n));    // 4
+        // console.log(counter(n));    // 5
+
+        // 但是会有bug
+
+        // bug：由于在点击 p 标签的时候，JS已经全部被加载完毕，n已经被覆盖了变成了 100，我们再次点击的时候就会从101开始
+
+        // 参阅：03 高阶函数了解函数特性
+
+        // 在某些时候我们为了避免全局污染，会使用闭包函数来进行操作：
+
+        var counter = (function () {
+            var n = 0;
+
+            return function () {
+                res = ++n;      // 闭包函数：使用了外部（n在外部）非全局（n不在全局变量里声明）的参数
+                console.log(res);
+            }
+
+        })()    // 开辟独立作用域
+
+        // 深入讲解：
+        /*
+        由于 JS 是先全部预加载，然后执行相应代码块，所以我们的赋值 counter = function... 应该是最后一步
+        但是！由于函数自执行，这个函数应该已经被执行过了，所以他的内部定义域：n 应该已经被删除，counter 这个变量应该直接
+        指向的是函数
+        function(){
+            res = ++n;
+            console.log(res)
+        }
+        这样的话，既然我们认为内存中属于 n 的值已经不在了，那么理论上来说会出现 bug！
+        解释：当我们的闭包函数存在的时候，也就是说存在外部非全局变量的时候，这个外部变量和函数本身同生同死，也就是说，
+        如果在我们 return 的值里面，有与这个函数相关的调用，也就是我在外部也需要调用这个函数本身，那么，相关的依赖环境，
+        也就是我们说的这个外部非全局变量，也会相应的保留。
+
+        环境被隔离开了！
+
+         */
+
+    </script>
+    <script>
+        var n = 100;
+    </script>
+</head>
+<body>
+
+<p onclick="counter()">Hello!</p>
+<p onclick="counter()">Hello1!</p>
+
+</body>
+</html>

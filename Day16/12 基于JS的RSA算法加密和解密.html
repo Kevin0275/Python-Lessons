@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.0.0/jsencrypt.min.js">
+        // 导入我们需要进行RSA加密使用的包
+        // crypt-js是我们在后端使用的一个库，然后这个文件是在前端使用所需要的
+    </script>
+</head>
+<body>
+
+<script>
+    // 创建RSA对象
+    const crypt = new JSEncrypt();
+
+    // 获取公钥和私钥
+    crypt.getKey()  // 生成密钥
+
+    const publicKey = crypt.getPublicKey();
+    const privateKey = crypt.getPrivateKey();
+    console.log(publicKey);
+    console.log(privateKey);
+
+    // 给定要加密的消息
+    const data = 'hello world';
+    alert(data);
+
+    // 使用公钥加密
+    const encrypted = crypt.encrypt(data);
+    console.log('encrypted', encrypted);
+
+    // 使用私钥解密
+    crypt.setPrivateKey(privateKey);
+    const decrypted = crypt.decrypt(encrypted);
+    console.log('decrypted', decrypted);
+
+
+</script>
+
+</body>
+</html>

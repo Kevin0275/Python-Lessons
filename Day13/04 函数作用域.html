@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        // 变量的作用域
+        // 全局变量
+        var x = 100;    // 全局变量，只有当程序结束的时候被清理
+
+        // 局部变量
+        // 函数具有开辟独立作用域的能力
+        function variable(y){
+            console.log(y)
+        }
+
+        // variable(1);    // variable 函数被调用，y 被加载，函数调用结束，y 被删除
+
+        // 全局位置不能调用局部变量，可以先调用全局变量，后调用内置变量
+
+        var z = 100;
+        function variable2(z){
+            var z = 1000;
+            console.log(z);
+        }
+        // console.log(z);     // 100，全局调用，没什么
+        // variable2(z);       // LEGB: 顺序：local，enclosing，global，built-in
+
+        function variable3(a){
+            var a = 100;
+
+            function test(a){
+                var a = 1000;
+                console.log(a);
+            }
+            test(a);
+            console.log('a:::', a)
+        }
+        variable3(1);
+
+        // 请注意：在 JS 环境下，流程控制语句不可以开辟作用域！都是在当前作用域下做的操作
+        var log = 1;
+        if (log == 1) {
+            var log1 = 3;
+        }
+        console.log(log1);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

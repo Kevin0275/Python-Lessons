@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+
+    <script>
+        // 单行注释，仅仅适用于JS
+        /*
+        多行注释
+         */
+        // let ele = document.getElementById('i1')   // 定位一个标签，let起宣示变量的作用
+        // ele.onclick = function(){
+        //     alert(123)      // 注意，如果只这么写的话，会报错，因为浏览器在拿到这个文件之后执行顺序也是自上而下
+        //     /*
+        //     处理方式1：把整个script标签塞到目标标签后面就可以
+        //     处理方式2：见下
+        //      */
+        // }
+    </script>
+    <script>
+        // window.onload = function(){
+        //     let ele = document.getElementById('i1')
+        //     ele.onclick = function(){
+        //         alert(123)
+        //     }
+        // }   // window.onload表示等待整个窗口都加载完毕，才执行里面的代码
+    </script>
+
+
+    <!-- 接下来我们讨论一下解耦，也就是导入文件，和python的import大同小异 -->
+    <script src="01%20Index.js"></script>       <!-- JS 文件导入 -->
+    <link rel="stylesheet" href="01%20Index.css">   <!-- CSS 文件导入 -->
+</head>
+<body>
+
+<h3 id="i1">
+    Welcome to my website!
+</h3>
+
+</body>
+</html>

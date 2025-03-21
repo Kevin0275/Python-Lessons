@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+        // Array数组
+        let p1 = ['Kevin', 19, false]
+        console.log(p1)
+
+        // Object对象
+        let p2 = {
+            name: 'Kevin',
+            age: 20,
+            married: false
+        };      // 这里JS和python不同，键的类型无所谓，直接写或者写成字符串都会被识别成属性
+        console.log(p2)
+        // Object取元素：
+        console.log(p2.name, p2.age);
+        console.log(p2['name']);
+        console.log(p2['n' + 'a' + 'm' + 'e']);     // 这里之所以可以使用看似麻烦的[]是为了反爬
+
+        // 函数:
+        function greeting(name) {
+            console.log('Greetings' + name + '!');
+            return name;
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
