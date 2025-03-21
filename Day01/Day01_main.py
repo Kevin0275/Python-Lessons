@@ -67,3 +67,8 @@
 # s2 = s.find('world')    # 返回结果显示：-1，不报错
 # print(s1)
 # print(s2)
+
+# [7] replace：替换字符串中的某个字符
+# s = 'Hello World!'
+# s1 = s.replace('World', 'Python')
+# print(s1)
