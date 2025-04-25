@@ -8,7 +8,7 @@ data = {
 
 # 如果我们使用Python对它进行json格式化
 json_data = json.dumps(data)
-print(repr(json_data))
+print(repr(json_data))      # repr函数会将字符串中的转义字符显示出来
 
 '''
 这里我们会得到：
@@ -28,3 +28,5 @@ json_data1 = json.dumps(data, separators=(',', ':'))
 print(repr(json_data1))
 
 # 现在我们就得到了和浏览器使用的json格式一样的数据字符串：'{"name":"Kevin","age":22}'
+
+# 主要在使用python组装json数据并且发送给服务器的时候需要用到

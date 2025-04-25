@@ -22,5 +22,5 @@ ret = 'Hello, master!'
 # 浏览器无法阅读响应
 
 # 为满足HTTP协议：
-ret1 = 'HTTP/1.1 200 ok /r/n/r/nHello, master!'
+ret1 = 'HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\nHello, world!'
 conn.send(ret1.encode())
