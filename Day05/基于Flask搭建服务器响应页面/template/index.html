@@ -16,7 +16,8 @@
 <script>
     let ele = document.getElementById('Method')
     ele.onclick = function () {
-        alert("{{ method }}")
+        alert("{{ method }}")   // 这里的{{ method }}是Flask渲染的变量，会被替换成实际的值，具体的值会由我们的python程序来决定，也就是由服务器端来决定
+        // 这里的ele.onclick是一个事件处理函数，当用户点击这个元素时，会弹出一个提示框，提示框的内容就是{{ method }}的值
     }
 </script>
 

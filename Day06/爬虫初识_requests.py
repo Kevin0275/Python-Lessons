@@ -38,12 +38,12 @@ my_headers = {
 my_params = {
 
 }
-# params是查询参数，get
+# params是查询参数，get请求会用到
 
 my_data = {
 
 }
-# data是请求体参数，post
+# data是请求体参数，post请求会用到
 
 response = requests.get(url=url, headers=my_headers, params=my_params, data=my_data)
 
@@ -71,6 +71,7 @@ res1 = requests.post(url=url, headers=my_headers, data=my_data)
 res_json = requests.post(url=url, json=my_data)
 '''
 问题出现在json格式化的字符，由于requests也是用json.dumps来做格式化，空格会出问题！
+参见Day04/Json进阶.py
 '''
 
 # 发送json格式数据方法2：推荐

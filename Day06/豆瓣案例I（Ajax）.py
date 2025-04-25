@@ -18,7 +18,7 @@ my_params = {
 
 res = requests.get(url=url, headers=my_headers, params=my_params)
 print(res.text) # 如果返回的数据是一个页面，就没办法用json来做
-print(res.json()) # 如果返回的数据是一个json字符串，就可以用json来做反序列化
+print(res.json()) # 如果返回的数据是一个json字符串，就可以用json来做反序列化，这个方法是requests自带的，如果你用json.loads()，就需要你自己导入json模块了
 print(json.loads(res.text)) # 当然，这样也行
 
 '''

@@ -9,7 +9,7 @@ Method = ['John', 'Smith', 'Judy', 'Louis']
 @app.get('/index')
 def index():
     method = 'By '+ random.choice(Method)
-    return render_template('index.html', **{'method':method})
+    return render_template('index.html', **{'method':method})   # 在index.html中，我们使用了{{ method }}来表示这个变量的值
 
 # 现在，我们用数据模拟一下，服务器从数据库里获取数据并且修改展示的网页的过程
 

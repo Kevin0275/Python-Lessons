@@ -19,7 +19,7 @@
         let ele = document.getElementById('BooksHead');
         ele.onclick = function(){
             $.ajax({
-                url:'/books',
+                url:'/books',   // 我们目前的地址加上/books，然后对于服务器发送请求。这个请求会被Flask接收
                 success: function(res){
                     console.log('Books Success', res);
                     // 这里我们让它在控制台打印

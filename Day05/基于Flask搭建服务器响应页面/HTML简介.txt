@@ -1,0 +1,36 @@
+对于HTML的标签名字以及对应的功能做一个简介：
+
+HTML文件和python文件一样，都是自上而下，一行一行执行，这也是为什么我们一般把JS文件放在最下面，因为JS会阻塞住文件。
+
+<!DOCTYPE html> 是每一个HTML都要有的第一行，声明本文档是HTML文件，方便浏览器阅读
+<html>      这是根目录
+
+<head>      这里会对于这个文档做一些声明和调用，包含meta，标题，样式等等
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" , href="/static/Requirement.css">    // 引入css文件
+    <style> CSS渲染，如果你不想导入文件的话，就直接写也可以 </style>
+</head>     结束head标签
+
+<body>      网页的主要内容部分
+
+<div>       块级布局标签，没有任何意义，就是为了布局
+    <h1>
+        文本内容标签<hn>，主要是标题标签，n = 1~6
+    </h1>
+    <p>     段落    </p>
+    <span>  行内容器，一般用于局部控制  </span>
+    <a>     超链接      </a>
+
+</div>
+
+<section>   表示网页的一个区域或者章节  </section>
+<header>    页眉    </header>
+<footer>    页脚    </footer>
+<main>  页面最主要内容，一般只允许有一个    </main>
+
+
+<script src = ''> JS文件 </script>
+</body>
+
+</html>     结束html标签
